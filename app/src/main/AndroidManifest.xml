@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.prasadthegreat.reminderapp">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/data_flair"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/data_flair"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ReminderApp">
+        <activity android:name=".splashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ReminderActivity" />
+        <activity android:name=".MainActivity">
+
+        </activity>
+
+        <receiver android:name=".AlarmBrodcast" />
+    </application>
+
+</manifest>
