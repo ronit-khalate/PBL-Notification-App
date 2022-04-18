@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.prasadthegreat.reminderapp">
+    package="com.dataflair.reminderapp">
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
@@ -11,19 +11,19 @@
         android:roundIcon="@drawable/data_flair"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReminderApp">
-        <activity android:name=".splashActivity">
+        <activity android:name="com.dataflair.reminderapp.splashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReminderActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.dataflair.reminderapp.ReminderActivity" />
+        <activity android:name="com.dataflair.reminderapp.MainActivity">
 
         </activity>
 
-        <receiver android:name=".AlarmBrodcast" />
+        <receiver android:name="com.dataflair.reminderapp.AlarmBrodcast" />
     </application>
 
 </manifest>

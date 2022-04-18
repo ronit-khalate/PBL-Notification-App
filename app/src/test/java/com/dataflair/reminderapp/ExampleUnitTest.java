@@ -1,4 +1,4 @@
-package com.prasadthegreat.reminderapp;
+package com.dataflair.reminderapp;
 
 import org.junit.Test;
 

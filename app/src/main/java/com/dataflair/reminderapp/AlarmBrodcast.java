@@ -1,4 +1,4 @@
-package com.prasadthegreat.reminderapp;
+package com.dataflair.reminderapp;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -13,6 +13,8 @@ import android.widget.RemoteViews;
 
 import androidx.core.app.NotificationCompat;
 
+import com.dataflair.reminderapp.R;
+
 public class AlarmBrodcast extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -21,17 +23,17 @@ public class AlarmBrodcast extends BroadcastReceiver {
         String date = bundle.getString("date") + " " + bundle.getString("time");
 
         //Click on Notification
-
-        Intent intent1 = new Intent(context, NotificationMessage.class);
+        Intent intent1 = new Intent(context, com.dataflair.reminderapp.NotificationMessage.class);
         intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent1.putExtra("message", text);
-        //Notification Builder
 
+        //Notification Builder
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 1, intent1, PendingIntent.FLAG_ONE_SHOT);
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, "notify_001");
 
 
+        //here we set all the properties for the notification
         RemoteViews contentView = new RemoteViews(context.getPackageName(), R.layout.notification_layout);
         contentView.setImageViewResource(R.id.image, R.mipmap.ic_launcher);
         PendingIntent pendingSwitchIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
@@ -48,6 +50,7 @@ public class AlarmBrodcast extends BroadcastReceiver {
         mBuilder.setContent(contentView);
         mBuilder.setContentIntent(pendingIntent);
 
+        //we have to create notification channel after api level 26
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             String channelId = "channel_id";
             NotificationChannel channel = new NotificationChannel(channelId, "channel name", NotificationManager.IMPORTANCE_HIGH);

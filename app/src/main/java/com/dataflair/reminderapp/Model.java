@@ -1,13 +1,14 @@
-package com.prasadthegreat.reminderapp;
+package com.dataflair.reminderapp;
 
-public class Model
-{
-    String title,date,time;
+//model class is used to set and get the data from database
 
-    public Model() {}
+public class Model {
+    String title, date, time;
 
-    public Model(String title, String date, String time)
-    {
+    public Model() {
+    }
+
+    public Model(String title, String date, String time) {
         this.title = title;
         this.date = date;
         this.time = time;
